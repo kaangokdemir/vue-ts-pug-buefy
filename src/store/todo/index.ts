@@ -1,26 +1,19 @@
 import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
+import { FakeApi } from '@/service'
 
+const fakeApi = new FakeApi()
 @Module({ namespaced: true })
 export default class TodoModule extends VuexModule {
-  count = 0
+  todos?: Todo[] = []
 
   @Mutation
-  increment (delta: number) {
-    this.count += delta
+  SET_TODOS (todos: Todo[]) {
+    this.todos = todos
   }
 
-  @Mutation
-  decrement (delta: number) {
-    this.count -= delta
-  }
-
-  @Action({ commit: 'increment' })
-  incr () {
-    return 5
-  }
-
-  @Action({ commit: 'decrement' })
-  decr () {
-    return 5
+  @Action({ commit: 'SET_TODOS' })
+  async fetchAllTodos () {
+    const { data } = await fakeApi.fetchAllTodos()
+    return data
   }
 }
