@@ -1,6 +1,6 @@
 <template lang="pug">
   #app
-    router-view
+    router-view.py-2.px-2
 </template>
 
 <script lang="ts">
