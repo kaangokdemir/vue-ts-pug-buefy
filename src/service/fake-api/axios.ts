@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = 'https://jsonplaceholder.typicode.com/'
+const baseURL = process.env.VUE_APP_FAKEAPI_BASEURL
 
 const $axios = axios.create({
   baseURL,
