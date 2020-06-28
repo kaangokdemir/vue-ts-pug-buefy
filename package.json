@@ -1,5 +1,6 @@
 {
-  "name": "vue-ts-pug",
+  "name": "vue-ts-pug-buefy",
+  "author": "Kaan Gökdemir",
   "version": "0.1.0",
   "private": true,
   "scripts": {

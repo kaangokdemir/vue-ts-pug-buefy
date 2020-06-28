@@ -1,4 +1,4 @@
-# vue-ts-pug
+# vue-ts-pug-buefy
 
 ## Project setup
 ```
