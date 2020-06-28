@@ -13,7 +13,7 @@ import { namespace } from 'vuex-class'
 const TodoModule = namespace('todo')
 
 @Component({
-  components: { Todo }
+  components: { Todo },
 })
 export default class Home extends Vue {
   @TodoModule.Action('fetchAllTodos')

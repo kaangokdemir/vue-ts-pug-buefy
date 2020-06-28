@@ -5,7 +5,7 @@ const $axios = axios.create({
   baseURL,
   headers: {
     // Authorization: `Bearer ${token}`
-  }
+  },
 })
 
 export default $axios
