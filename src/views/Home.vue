@@ -8,19 +8,18 @@
 <script lang="ts">
 import Todo from '../components/Todo.vue'
 import { Component, Vue } from 'vue-property-decorator'
-import { namespace } from 'vuex-class'
-
-const TodoModule = namespace('todo')
+import { Action, State } from 'vuex-class'
+import TodoModule from '../store/todo'
 
 @Component({
   components: { Todo },
 })
 export default class Home extends Vue {
-  @TodoModule.Action('fetchAllTodos')
-  public fetchAllTodos!: () => Promise<void>
+  @Action('todo/fetchAllTodos')
+  fetchAllTodos!: () => Promise<void>
 
-  @TodoModule.State('todos')
-  public todos!: Todo[]
+  @State(state => (state.todo as TodoModule).todos)
+  todos!: Todo[]
 
   created () {
     this.fetchAllTodos()

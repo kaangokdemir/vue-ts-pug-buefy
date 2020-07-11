@@ -4,7 +4,7 @@ import { FakeApi } from '@/service'
 const fakeApi = new FakeApi()
 @Module({ namespaced: true })
 export default class TodoModule extends VuexModule {
-  todos?: Todo[] = []
+  todos: Todo[] = []
 
   @Mutation
   SET_TODOS (todos: Todo[]) {
